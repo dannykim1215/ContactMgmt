@@ -7,13 +7,17 @@
 
 import Foundation
 
-// 사용자 값을 입력 받기
+// 사용자의 값을 입력 받기
+// terminator를 사용한 이유는?
 print("연락처 정보를 입력해주세요 : ", terminator: "")
+// readLine()은 무엇인가?, split(sparator: )은?
 var input = readLine()!.split(separator: "/")
 
-// 사용자가 입력을 올바르게 입력했다면 flag값은 1,  잘 못 입력했다면 flag값은 0
+// 사용자가 나이 입력을 올바르게 입력했다면 flag 값은 1이고, 잘못 입력했다면 flag 값은 0이다.
 var age_flag:Int = 1
+// 사용자가 연락처 입력을 올바르게 입력했다면 flag 값은 1이고, 잘못 입력했다면 flag 값은 0이다.
 var contract_flag:Int = 1
+// 사용자가 입력을 입력했다면 flag 값은 1이고, 입력 안했다면 flag 값은 0이다.
 var none_flag:Int = 1
 
 // 이름 변수
@@ -22,6 +26,7 @@ var name:String = ""
 var age:String = ""
 // 연락처 변수
 var contract:String = ""
+
 
 // 입력값이 아무것도 없을 때, 잘못된 입력입니다.
 if input.count == 0 {
@@ -67,7 +72,7 @@ else if input.count != 0 {
     }
 
     // 출력값
-    if age_flag == 1 && contract_flag == 1 && none_flag == 1 {
+    if age_flag == 1 && contract_flag == 1 {
         print("입력한 정보는 \(age)세 \(name)(\(contract))입니다.")
     } else if age_flag == 0{
         print("입력한 나이정보가 잘못되었습니다. 입력 형식을 확인해주세요.")
