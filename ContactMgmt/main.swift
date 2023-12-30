@@ -7,13 +7,13 @@
 
 import Foundation
 
-// 프로그램 "x" 종료를 누를 때 까지 무한반복해야하기 때문에 while문을 사용해야 한다.
-
-var program_life = 1
 
 // 연락처 리스트 변수
 var contractList:Array<String> = []
+// 프로그램 "x"를 입력하면 program_life가 0으로 변경되면서 while문이 종료되기 때문에, 초기값은 1로 지정한다.
+var program_life = 1
 
+// 프로그램 "x" 종료를 누를 때 까지 무한반복해야하기 때문에 while문을 사용해야 한다.
 while program_life != 0 {
     // 사용자의 값을 입력 받기
     // terminator를 사용한 이유는?
@@ -84,14 +84,14 @@ while program_life != 0 {
             // 출력값
             if age_flag == 1 && contract_flag == 1 {
                 print("입력한 정보는 \(age)세 \(name)(\(contract))입니다.")
+                // 연락처 리스트에 저장하기
+                contractList.append("\(name) / \(age) / \(contract)")
             } else if age_flag == 0{
                 print("입력한 나이정보가 잘못되었습니다. 입력 형식을 확인해주세요.")
             } else if contract_flag == 0 {
                 print("입력한 연락처정보가 잘못되었습니다. 입력 형식을 확인해주세요.")
             }
-            
-            // 연락처 리스트에 저장하기
-            contractList.append("\(name) / \(age) / \(contract)")
+          
             
         }
     } else if menu == "2" {
@@ -100,16 +100,25 @@ while program_life != 0 {
             print("- \(i)")
         }
     } else if menu == "3" {
+        print("연락처에서 찾을 이름을 입력해주세요 : ", terminator: "")
         // 사용자 검색값을 입력받는다.
         var search_User:String = readLine()!
-        print(type(of: search_User))
+        
+        // 만약, 연락처 정보에 없는 이름을 입력했는 지, 없는 지 체크하는 변수를 하나 생성한다.
+        var name_check:Int = 0
         
         // 반목문을 이용해서 현재까지 저장되어 있는 연락처 개수까지 반복하면서 검색값과 비교한다.
         // 검색값이 동일하다면 출력 함수를 이용하여 출력한다.
         for i in 0...contractList.count-1 {
             if search_User == String(contractList[i].split(separator: " / ")[0]) {
                 print("- \(contractList[i])")
+                name_check += 1
             }
+        }
+        
+        // name_check 변수값이 0 이라면, 반복문이 돌 때 변수값이 증가되지 않았다는 의미로 연락처에 해당 값이 없다는 것을 의미한다.
+        if name_check == 0 {
+            print("연락처에 \(search_User) 이(가) 없습니다.")
         }
     } else if menu == "x" {
         print("[프로그램 종료]")
