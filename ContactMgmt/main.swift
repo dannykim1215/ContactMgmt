@@ -9,7 +9,20 @@ import Foundation
 
 // 사용자의 값을 입력 받기
 // terminator를 사용한 이유는?
-print("연락처 정보를 입력해주세요 : ", terminator: "")
+print("1) 연락처 추가 2) 연락처 목록보기 3) 연락처 검색 x) 종료")
+print("메뉴를 선택해주세요 : ", terminator: "")
+var menu = readLine()
+
+// 연락처 추가
+if menu == "1" {
+    print("연락처 정보를 입력해주세요 : ", terminator: "")
+} else if menu == "2" {
+    print("[프로그램 종료]")
+} else if menu == "3" {
+    print("[프로그램 종료]")
+} else if menu == "x" {
+    print("[프로그램 종료]")
+}
 // readLine()은 무엇인가?, split(sparator: )은?
 var input = readLine()!.split(separator: "/")
 
