@@ -9,12 +9,12 @@ import Foundation
 
 
 // 연락처 리스트 변수
-var contractList:Array<String> = []
+var contactList:Array<String> = []
 // 프로그램 "x"를 입력하면 program_life가 0으로 변경되면서 while문이 종료되기 때문에, 초기값은 1로 지정한다.
-var program_life = 1
+var programLife = 1
 
 // 프로그램 "x" 종료를 누를 때 까지 무한반복해야하기 때문에 while문을 사용해야 한다.
-while program_life != 0 {
+while programLife != 0 {
     // 사용자의 값을 입력 받기
     // terminator를 사용한 이유는?
     print("1) 연락처 추가 2) 연락처 목록보기 3) 연락처 검색 x) 종료")
@@ -24,14 +24,14 @@ while program_life != 0 {
     // 사용자가 나이 입력을 올바르게 입력했다면 flag 값은 1이고, 잘못 입력했다면 flag 값은 0이다.
     var age_flag:Int = 1
     // 사용자가 연락처 입력을 올바르게 입력했다면 flag 값은 1이고, 잘못 입력했다면 flag 값은 0이다.
-    var contract_flag:Int = 1
+    var contact_flag:Int = 1
 
     // 이름 변수
     var name:String = ""
     // 나이 변수
     var age:String = ""
     // 연락처 변수
-    var contract:String = ""
+    var contact:String = ""
     
     // 연락처 추가
     if menu == "1" {
@@ -72,58 +72,60 @@ while program_life != 0 {
                     num += 1
                 }
                 if i != " " {
-                    contract.append(i)
+                    contact.append(i)
                 }
             }
 
             // 연락처 "-" 값이 2개가 아니라면 잘못된 입력입니다.
             if num != 2 {
-                contract_flag = 0
+                contact_flag = 0
             }
 
             // 출력값
-            if age_flag == 1 && contract_flag == 1 {
-                print("입력한 정보는 \(age)세 \(name)(\(contract))입니다.")
+            if age_flag == 1 && contact_flag == 1 {
+                print("입력한 정보는 \(age)세 \(name)(\(contact))입니다.")
                 // 연락처 리스트에 저장하기
-                contractList.append("\(name) / \(age) / \(contract)")
-            } else if age_flag == 0{
+                contactList.append("\(name) / \(age) / \(contact)")
+            } else if age_flag == 0 && contact_flag == 1 {
                 print("입력한 나이정보가 잘못되었습니다. 입력 형식을 확인해주세요.")
-            } else if contract_flag == 0 {
+            } else if contact_flag == 0 && age_flag == 1 {
                 print("입력한 연락처정보가 잘못되었습니다. 입력 형식을 확인해주세요.")
+            } else if age_flag == 0 && contact_flag == 0{
+                print("입력한 나이, 연락처정보가 잘못되었습니다. 입력 형식을 확인해주세요.")
             }
           
             
         }
     } else if menu == "2" {
         // 연락처 목록보기
-        for i in contractList {
+        for i in contactList {
             print("- \(i)")
         }
     } else if menu == "3" {
         print("연락처에서 찾을 이름을 입력해주세요 : ", terminator: "")
         // 사용자 검색값을 입력받는다.
-        var search_User:String = readLine()!
+        var searchUser:String = readLine()!
         
         // 만약, 연락처 정보에 없는 이름을 입력했는 지, 없는 지 체크하는 변수를 하나 생성한다.
         var name_check:Int = 0
         
         // 반목문을 이용해서 현재까지 저장되어 있는 연락처 개수까지 반복하면서 검색값과 비교한다.
         // 검색값이 동일하다면 출력 함수를 이용하여 출력한다.
-        for i in 0...contractList.count-1 {
-            if search_User == String(contractList[i].split(separator: " / ")[0]) {
-                print("- \(contractList[i])")
+        for i in 0...contactList.count-1 {
+            if searchUser == String(contactList[i].split(separator: " / ")[0]) {
+                print("- \(contactList[i])")
                 name_check += 1
             }
         }
         
         // name_check 변수값이 0 이라면, 반복문이 돌 때 변수값이 증가되지 않았다는 의미로 연락처에 해당 값이 없다는 것을 의미한다.
         if name_check == 0 {
-            print("연락처에 \(search_User) 이(가) 없습니다.")
+            print("연락처에 \(searchUser) 이(가) 없습니다.")
         }
     } else if menu == "x" {
         print("[프로그램 종료]")
         // program_life 값을 0으로 변경함으로써, 프로그램을 종료시킨다.
-        program_life = 0
+        programLife = 0
     }
 
 }
