@@ -19,7 +19,7 @@ while programLife != 0 {
     // terminator를 사용한 이유는?
     print("1) 연락처 추가 2) 연락처 목록보기 3) 연락처 검색 x) 종료")
     print("메뉴를 선택해주세요 : ", terminator: "")
-    var menu = readLine()
+    let menu = readLine()
 
     // 사용자가 나이 입력을 올바르게 입력했다면 flag 값은 1이고, 잘못 입력했다면 flag 값은 0이다.
     var age_flag:Int = 1
@@ -37,7 +37,7 @@ while programLife != 0 {
     if menu == "1" {
         print("연락처 정보를 입력해주세요 : ", terminator: "")
         // readLine()은 무엇인가?, split(sparator: )은?
-        var input = readLine()!.split(separator: "/")
+        let input = readLine()!.split(separator: "/")
 
         // 입력값이 아무것도 없을 때, 잘못된 입력입니다.
         if input.count == 0 {
@@ -104,7 +104,7 @@ while programLife != 0 {
     } else if menu == "3" {
         print("연락처에서 찾을 이름을 입력해주세요 : ", terminator: "")
         // 사용자 검색값을 입력받는다.
-        var searchUser:String = readLine()!
+        let searchUser:String = readLine()!
         
         // 만약, 연락처 정보에 없는 이름을 입력했는 지, 없는 지 체크하는 변수를 하나 생성한다.
         var name_check:Int = 0
