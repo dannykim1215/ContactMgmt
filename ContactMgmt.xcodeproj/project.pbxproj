@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		2E9EFED62B3FC35900789436 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9EFED52B3FC35900789436 /* main.swift */; };
+		2EDFFF912B87A42B008B0260 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDFFF902B87A42B008B0260 /* Contact.swift */; };
+		2EDFFF932B87A655008B0260 /* ContactMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDFFF922B87A655008B0260 /* ContactMenu.swift */; };
+		2EDFFF952B87A72B008B0260 /* ContactMgmt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EDFFF942B87A72B008B0260 /* ContactMgmt.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +28,9 @@
 /* Begin PBXFileReference section */
 		2E9EFED22B3FC35900789436 /* ContactMgmt */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ContactMgmt; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E9EFED52B3FC35900789436 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		2EDFFF902B87A42B008B0260 /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		2EDFFF922B87A655008B0260 /* ContactMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMenu.swift; sourceTree = "<group>"; };
+		2EDFFF942B87A72B008B0260 /* ContactMgmt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactMgmt.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,9 @@
 			isa = PBXGroup;
 			children = (
 				2E9EFED52B3FC35900789436 /* main.swift */,
+				2EDFFF902B87A42B008B0260 /* Contact.swift */,
+				2EDFFF922B87A655008B0260 /* ContactMenu.swift */,
+				2EDFFF942B87A72B008B0260 /* ContactMgmt.swift */,
 			);
 			path = ContactMgmt;
 			sourceTree = "<group>";
@@ -120,6 +129,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2EDFFF932B87A655008B0260 /* ContactMenu.swift in Sources */,
+				2EDFFF952B87A72B008B0260 /* ContactMgmt.swift in Sources */,
+				2EDFFF912B87A42B008B0260 /* Contact.swift in Sources */,
 				2E9EFED62B3FC35900789436 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
